@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://www.marktechpost.com/wp-content/uploads/2022/12/neural-network-data-being-pixelized-through-series-technological-scaled.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #candidate-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+            width: 80%; /* Form takes 80% width on larger screens */
+            max-width: 400px; /* But not more than 400px */
+            text-align: center;
+            margin-bottom: 100px; /* Add margin at the bottom for space */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+
+        .form-input {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            outline: none;
+            resize: vertical; /*Allow vertical resizing*/
+            margin-top: 5px;
+        }
+
+        .form-input-file {
+            margin-top: 10px;
+        }
+
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Custom styling for invalid email */
+        .invalid-email {
+            border: 1px solid #ff0000;
+        }
+
+        /* Dashboard styling */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://www.marktechpost.com/wp-content/uploads/2022/12/neural-network-data-being-pixelized-through-series-technological-scaled.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        /* Media query for mobile devices */
+        @media only screen and (max-width: 600px) {
+            #candidate-form {
+                width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+    <title>Candidate Page</title>
+</head>
+<body>
+    <div id="candidate-form">
+        <div class="form-group">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" class="form-input" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" class="form-input" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label for="mobile" class="form-label">Mobile Number:</label>
+            <input type="tel" id="mobile" class="form-input" pattern="[0-9]+" placeholder="Enter your mobile number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="additionalContact" class="form-label">Alternate Number:</label>
+            <input type="tel" id="additionalContact" class="form-input" pattern="[0-9]+" placeholder="Enter alternate number">
+        </div>
+
+        <div class="form-group">
+            <label for="position" class="form-label">Position:</label>
+            <input type="text" id="position" class="form-input" placeholder="Enter your position">
+        </div>
+
+        <div class="form-group">
+            <label for="client" class="form-label">Client Name:</label>
+            <input type="text" id="client" class="form-input" placeholder="Enter client name">
+        </div>
+
+        <div class="form-group">
+            <label for="client-location" class="form-label">Client Location:</label>
+            <input type="text" id="client-location" class="form-input" placeholder="Enter client location">
+        </div>
+
+        <div class="form-group">
+            <label for="join-date" class="form-label">Joining Date:</label>
+            <input type="date" id="join-date" class="form-input">
+        </div>
+
+        <div class="form-group">
+            <label for="start-date" class="form-label">Start Date of Work Order:</label>
+            <input type="date" id="start-date" class="form-input">
+        </div>
+
+        <div class="form-group">
+            <label for="end-date" class="form-label">End Date of Work Order:</label>
+            <input type="date" id="end-date" class="form-input">
+        </div>
+
+        <div class="form-group">
+            <label for="fees" class="form-label">Fees:</label>
+            <input type="text" id="fees" class="form-input" placeholder="Enter fees">
+        </div>
+
+        <div class="form-group">
+            <label for="project-director" class="form-label">Project Director:</label>
+            <input type="text" id="project-director" class="form-input" placeholder="Enter project director">
+        </div>
+
+        <div class="form-group">
+            <label for="project-partner" class="form-label">Project Partner:</label>
+            <input type="text" id="project-partner" class="form-input" placeholder="Enter project partner">
+        </div>
+
+        <div class="form-group">
+            <label for="wo-detail" class="form-label">WO Detail:</label>
+            <textarea type="text" id="wo-detail" class="form-input" placeholder="Enter WO detail"></textarea>
+        </div>
+
+        <div class="form-group form-input-file">
+            <label for="work-order-upload" class="form-label">Upload Work Order:</label>
+            <input type="file" id="work-order-upload" accept=".pdf, .doc, .docx" class="form-input">
+        </div>
+
+        <div class="form-group form-input-file">
+            <label for="nda-upload" class="form-label">Upload NDA:</label>
+            <input type="file" id="nda-upload" accept=".pdf, .doc, .docx" class="form-input">
+        </div>
+
+        <div class="form-group form-input-file">
+            <label for="resume-upload" class="form-label">Upload Resume:</label>
+            <input type="file" id="resume-upload" accept=".pdf, .doc, .docx" class="form-input">
+        </div>
+
+        <button class="submit-btn">Submit</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script>
+        const emailInput = document.getElementById('email');
+
+        emailInput.addEventListener('input', () => {
+            const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+
+            if (!isValidEmail) {
+                emailInput.classList.add('invalid-email');
+            } else {
+                emailInput.classList.remove('invalid-email');
+            }
+        });
+    </script>
+</body>
+</html>
