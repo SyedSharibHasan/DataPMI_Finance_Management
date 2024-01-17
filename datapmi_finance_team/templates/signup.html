@@ -3,94 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ... your existing head content ... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    
     <link rel="stylesheet" href="style.css">
     <title>Signup Page</title>
 
     <style>
-            body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    /* background-color: #f2f2f2; */
-    background-image: url('https://preview.redd.it/cciryoim2wt71.jpg?auto=webp&s=cabb31d7907a96c11fb40e75a0cd9af7b17c9c01');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://preview.redd.it/cciryoim2wt71.jpg?auto=webp&s=cabb31d7907a96c11fb40e75a0cd9af7b17c9c01');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
 
-form {
-    max-width: 300px;
-    margin: 0 auto;
-}
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-h2 {
-    text-align: center;
-    color: #333;
-}
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
 
-.input-group {
-    margin-bottom: 15px;
-}
+        h2 {
+            text-align: center;
+            color: #333;
+        }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-}
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
 
-input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-button:hover {
-    background-color: #45a049;
-}
+        .toggle-password {
+            position: absolute;
+            top: 70%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
 
-p {
-    margin-top: 15px;
-    text-align: center;
-}
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-a {
-    color: #3498db;
-}
+        button:hover {
+            background-color: #45a049;
+        }
 
+        p {
+            margin-top: 15px;
+            text-align: center;
+        }
 
-.logo {
-    display: block;
-    margin: 0 auto 20px; /* Center the logo and add some bottom margin */
-}
+        a {
+            color: #3498db;
+        }
 
+        .logo {
+            display: block;
+            margin: 0 auto 20px; /* Center the logo and add some bottom margin */
+        }
     </style>
+
 </head>
 <body>
     <div class="container">
         <img src="https://pbs.twimg.com/profile_images/1559934429371695105/zUah2lDb_400x400.jpg" alt="Logo" class="logo">
-        <form action="signup.php" method="post">
+        <form action="" method="post">
+            {% csrf_token %}
             <h2>Sign Up</h2>
             <div class="input-group">
                 <label for="username">Username:</label>
@@ -103,10 +117,34 @@ a {
             <div class="input-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+                <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
             </div>
+            
             <button type="submit">Sign Up</button>
-            <p>Already have an account? <a href="index.html">Login here</a></p>
+            <p>Already have an account? <a href="/login">Login here</a></p>
         </form>
     </div>
+
+    <script>
+      
+    function togglePassword() {
+        var passwordField = document.getElementById('password');
+        var eyeIcon = document.querySelector('.toggle-password');
+
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            eyeIcon.classList.remove('fa-eye');
+            eyeIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordField.type = 'password';
+            eyeIcon.classList.remove('fa-eye-slash');
+            eyeIcon.classList.add('fa-eye');
+        }
+    }
+    </script>
 </body>
 </html>
+
+
+
+
