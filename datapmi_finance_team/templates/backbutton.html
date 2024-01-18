@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>New Page</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px 20px 0 0; /* Add a top margin of 20px */
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Ensure children stack vertically */
+            align-items: flex-end; /* Align items to the right */
+            height: 100vh;
+            background-image: url('https://www.chromethemer.com/download/hd-wallpapers/batman-3840x2160.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .action-button {
+            padding: 10px 20px;
+            margin-left: 10px; /* Add some margin between buttons */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .action-button:hover {
+            background-color: #2980b9;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="action-button" onclick="goBack()">Back</button>
+        <button class="action-button" onclick="goHome()">Home</button>
+    </div>
+
+
+    <script>
+        function goBack() {
+            // Implement the logic to go back to the previous page or state
+            console.log('Going back...');
+        }
+
+        function goHome() {
+            // Implement the logic to go to the home page
+            console.log('Going home...');
+        }
+    </script>
+</body>
+</html>

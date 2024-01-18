@@ -6,8 +6,8 @@
     <title>Job Application Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  */
+            /* font-family: Arial, sans-serif;*/
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 120px;
             padding: 20px; /* Thoda margin upar se */
             background-color: #f4f4f4;
@@ -25,7 +25,7 @@
             display: flex;
             justify-content: space-between;
             background-color: #fff;
-            padding: 35px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 900px;
@@ -76,10 +76,7 @@
 
 <div class="form-container">
     <div class="form-section">
-
-        <br>
-        <br>
-        <!-- <h2>Personal Information</h2> -->
+        <h2>Personal Information</h2>
 
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -107,29 +104,14 @@
 
         <label for="projectPartner">Project Partner:</label>
         <input type="text" id="projectPartner" name="projectPartner" placeholder="Enter project partner" required>
-
-        <label for="fees">Fees:</label>
-        <input type="text" id="fees" name="fees" placeholder="Enter fees" required>
-
         <button class="button" type="submit">Submit</button>
     </div>
    
     <div class="form-section">
-        <br>
-        <br>
-        <!-- <h2>Additional Information</h2> -->
-
-        <label for="employeeStatus">Employee Status:</label>
-            <select id="employeeStatus" name="employeeStatus" required>
-                <option value="">Select Status</option>
-                <option value="Permanent">Permanent</option>
-                <option value="Contractor">Contractor</option></select>
+        <h2>Additional Information</h2>
 
         <label for="joiningDate">Joining Date:</label>
         <input type="date" id="joiningDate" name="joiningDate" required>
-
-        <label for="lastWorkingDate">Last Working Date:</label>
-        <input type="date" id="joiningDate" name="lastWorkingDate" required>
 
         <label for="workOrderStartDate">Start Date of Work Order:</label>
         <input type="date" id="workOrderStartDate" name="workOrderStartDate" required>
@@ -137,8 +119,10 @@
         <label for="workOrderEndDate">End Date of Work Order:</label>
         <input type="date" id="workOrderEndDate" name="workOrderEndDate" required>
 
-        
-        <label for="woDetail">Work Order Detail:</label>
+        <label for="fees">Fees:</label>
+        <input type="text" id="fees" name="fees" placeholder="Enter fees" required>
+
+        <label for="woDetail">WO Detail:</label>
         <textarea id="woDetail" name="woDetail" rows="4" placeholder="Enter work order details" required></textarea>
 
         <label for="uploadWorkOrder">Upload Work Order:</label>

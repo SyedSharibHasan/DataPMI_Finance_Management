@@ -75,34 +75,11 @@
             <h2>Logout Confirmation</h2><br>
             <p>Are you sure you want to log out?</p>
             <br>
-            <a href="{% url 'signout' %}"> <button class="action-button" onclick="logout()">Logout</button>  </a>
-            <button class="action-button" onclick="cancelLogout()">Cancel</button>
+            <a href="/signout"> <button class="action-button" >Logout</button>  </a>
+            <button class="action-button" >Cancel</button>
         </div>
     </div>
 
-    <script>
-        function logout() {
-            // Simulate a delay before triggering the fade-out
-            setTimeout(() => {
-                const logoutBox = document.getElementById('logoutBox');
-                logoutBox.classList.add('fade-out');
-
-                // After the animation completes, you can redirect or perform other actions
-                setTimeout(() => {
-                    console.log('Logged out successfully!');
-                    // Redirect or perform other actions here
-                }, 500); // Adjust the delay to match your CSS animation duration
-            }, 1000); // Simulated delay of 1 second
-        }   
-
-        function cancelLogout() {
-            const logoutBox = document.getElementById('logoutBox');
-            logoutBox.classList.add('fade-out');
-            setTimeout(() => {
-                // Redirect or perform other actions here
-                console.log('Logout canceled!');
-            }, 500);
-        }
-    </script>
+  
 </body>
 </html>
